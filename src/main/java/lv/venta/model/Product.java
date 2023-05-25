@@ -1,33 +1,40 @@
 package lv.venta.model;
 
 public class Product {
-	private String Title;
-	private String Description;
-	private float Price;
+	private String title;
+	private String description;
+	private float price;
 	private int quantity;
-	private long ID;
-	private static long IDCounter;
+	private long id;
+	private static long idCounter;
 	
-	
+	public Product(String title, String description, float price, int quantity) {
+		setID();
+		this.title = title;
+		this.description = description;
+		this.price = price;
+		this.quantity = quantity;
+	}
+	public Product() {}
 	
 	
 	public String getTitle() {
-		return Title;
+		return title;
 	}
 	public void setTitle(String title) {
-		Title = title;
+		title = title;
 	}
 	public String getDescription() {
-		return Description;
+		return description;
 	}
 	public void setDescription(String description) {
-		Description = description;
+		description = description;
 	}
 	public float getPrice() {
-		return Price;
+		return price;
 	}
 	public void setPrice(float price) {
-		Price = price;
+		price = price;
 	}
 	public int getQuantity() {
 		return quantity;
@@ -36,15 +43,22 @@ public class Product {
 		this.quantity = quantity;
 	}
 	public long getID() {
-		return ID;
+		return id;
 	}
 	public void setID() {
-		ID = IDCounter++;
+		id = idCounter++;
 	}
 	public static long getIDCounter() {
-		return IDCounter;
+		return idCounter;
 	}
 	public static void setIDCounter(long iDCounter) {
-		Product.IDCounter = iDCounter;
+		Product.idCounter = iDCounter;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "Product [title=" + title + ", description=" + description + ", price= " + price + ", quantity= " + quantity + ", ID= "+id+ "]";
+	
 	}
 }
